@@ -41,26 +41,30 @@ int main() {
 inputs.open(numfile);
 
 
-string line;
-
 // check if the file is even opening using the .open() function
 if (!inputs.is_open())  {
    cout << "Error opening " << numfile << endl;
    exit(1);
 }
 
+// counter counts the amount of times the given character is in the input
+// make sure to initialize this OUTSIDE of the while loop
 int counter = 0;
 
+/* GETLINE FORMAT --> getline(streamName,line) you dont need to initialize 
+the line cuz getline already takes in the line that the input or in this
+case the file has
+*/
 while (getline(inputs, line)) {
+   for (long unsigned int i = 0; i < line.size(); ++i)   {
 
-
-
-
-   for (int i = 0; i < line.size(); ++i)   {
+      // letter is already in the parameters of the function so dont need to initialize
+      // line below checks if the letters in the line are equal to the given char letter
       if (line.at(i) == letter)   {
          counter = counter + 1;
       }
    }
 }
+// return the counter OUTSIDE of the while loop
    return counter; 
 }
