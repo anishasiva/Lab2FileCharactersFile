@@ -47,6 +47,8 @@ if (!inputs.is_open())  {
    exit(1);
 }
 
+string line;
+
 // counter counts the amount of times the given character is in the input
 // make sure to initialize this OUTSIDE of the while loop
 int counter = 0;
